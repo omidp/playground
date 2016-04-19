@@ -1,2 +1,3 @@
-# playground
-contains everything, I code daily
+# Playground
+
+contains everything that I code daily
