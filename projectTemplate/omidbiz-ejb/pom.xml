@@ -15,6 +15,19 @@
 	<name>omidbiz EJB Module</name>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.jboss.seam</groupId>
+				<artifactId>jboss-seam-resteasy</artifactId>
+			</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.jbpm</groupId>
@@ -98,7 +111,7 @@
 			<artifactId>java-object-diff</artifactId>
 		</dependency>
 
-	
+
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -216,7 +229,7 @@
 			<artifactId>jsf-impl</artifactId>
 		</dependency>
 
-	
+
 
 
 
