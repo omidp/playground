@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd"
+       version="6">
+  <display-name>omidbiz-ear</display-name>
+  <module>
+    <web>
+      <web-uri>omidbiz-web.war</web-uri>
+      <context-root>/omidbiz</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>omidbiz-ejb.jar</ejb>
+  </module>
+  <module>
+    <ejb>jboss-seam-2.2.3.jar</ejb>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

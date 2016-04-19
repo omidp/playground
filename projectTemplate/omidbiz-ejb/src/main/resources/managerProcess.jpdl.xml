@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns=""  name="managerProcess">
+
+
+	<start-state name="startUserFlow">
+		<transition to="responsible-node" name="startManager"></transition>
+	</start-state>
+
+
+	<task-node name="responsible-node">
+		<task name="responsible-node" description="#{comment}">
+			<assignment pooled-actors="#{responsible}"></assignment>
+		</task>
+		<transition to="endUserFlow" name="toEnd"></transition>
+		<transition to="responsible-node" name="toResponsible"></transition>
+	</task-node>
+
+
+	<end-state name="endUserFlow"></end-state>
+
+
+</process-definition>

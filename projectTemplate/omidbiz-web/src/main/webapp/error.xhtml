@@ -1,0 +1,30 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"    
+    >
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	<title><h:outputText value="#{messages['Page_Title']}" /></title>	
+	<script type="text/javascript">
+	
+		var currentDate = new Date(#{currentDate.time});
+		var sessionTimeout = #{httpSession.maxInactiveInterval};
+		var pathName = window.location.pathname.substring(contextPath.length+1).replace('.seam', '.xhtml');		
+		jQuery.noConflict();
+		
+	</script>
+	</head>
+	<body>
+		
+		Oooops something bad happened :-(
+    
+	</div>	
+
+    </body>
+    </html>
+</ui:composition>

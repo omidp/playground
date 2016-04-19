@@ -1,0 +1,47 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"                 
+                 xmlns:s="http://jboss.com/products/seam/taglib">
+
+<script>
+//<![CDATA[
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+     var timeinterval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(timeinterval);
+            var r = confirm("#{messages['Logout_Confirm']}");
+            if (r == true) {
+	            subSocket.push('logout');
+            } else {
+            //timer = duration;
+            }
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    //var sessionMinutes = #{securitySettings.sessionTtl};    
+    var sessionMinutes = 50;
+    //display = document.getElementById("#{rich:clientId('timer')}");
+    //startTimer(sessionMinutes, display);
+};
+//]]>
+</script>
+
+ <s:span id="timer" title="#{messages['Time_To_Leave']}" style="position:absolute;color:#fff;cursor:pointer;margin-left:44px;">
+ 	
+ </s:span> 
+
+
+
+</ui:composition>

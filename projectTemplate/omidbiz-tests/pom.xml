@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>omidbiz</artifactId>
+		<groupId>com.omid</groupId>
+		<version>2.2.3</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.omid</groupId>
+	<artifactId>omidbiz-tests</artifactId>
+	<name>omidbiz Integration Tests Module</name>
+	<packaging>war</packaging>
+	
+	<dependencies>
+
+
+	
+		
+	
+		
+		
+		<dependency>
+			<groupId>com.omid</groupId>
+			<artifactId>omidbiz-ejb</artifactId>
+			<version>${project.version}</version>			
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<type>ejb</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>quartz</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Arquillian -->
+
+		<dependency>
+			<groupId>org.jboss.arquillian.protocol</groupId>
+			<artifactId>arquillian-protocol-servlet</artifactId>
+			<version>1.1.0.Final</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<version>1.1.0.Final</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.jboss.spec</groupId> <artifactId>jboss-javaee-6.0</artifactId> 
+			<version>1.0.0.Final</version> <type>pom</type> <scope>provided</scope> </dependency> -->
+
+		<dependency>
+			<groupId>org.jboss.as</groupId>
+			<artifactId>jboss-as-arquillian-container-remote</artifactId>
+			<version>7.2.0.Final</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>			
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+				<!-- <excludes>          			
+          			<exclude>**/*.xls</exclude>
+          			<exclude>**/*.xlsx</exclude>
+          			<exclude>**/*.mpp</exclude>
+          			<exclude>**/*.mpx</exclude>
+        		</excludes>
+        		 -->
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>surefire-it</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

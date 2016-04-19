@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hbmQueries>
+<TaskInstance queryName="taskInstanceCount">
+select count(distinct ti)
+      from org.jbpm.taskmgmt.exe.PooledActor pooledActor
+           join pooledActor.taskInstances ti
+      where pooledActor.actorId in ( :actorIds )
+        and ti.actorId is null
+        and ti.isSuspended != true
+        and ti.isOpen = true	
+</TaskInstance>
+</hbmQueries>

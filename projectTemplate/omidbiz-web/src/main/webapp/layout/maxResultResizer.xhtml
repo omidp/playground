@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"    
+    xmlns:s="http://jboss.com/products/seam/taglib">
+    
+	<div class="list-item-per-pages">
+		<h:outputText value="#{messages['Count']} #{messages['In']} #{messages['List']}:  "></h:outputText>
+	 <!--   <omidbiz:dropDown forceId="offsetValue" value="#{offsetValue}" onchange="this.form.submit(); setLimitListCookie(this);" converter="javax.faces.Integer">
+			<f:selectItem itemValue="15" itemLabel="15"/>
+			<f:selectItem itemValue="25" itemLabel="25"/>
+	        <f:selectItem itemValue="50" itemLabel="50"/>
+	        <f:selectItem itemValue="75" itemLabel="75"/>
+	        <f:selectItem itemValue="100" itemLabel="100"/>
+		</omidbiz:dropDown> -->
+    </div>
+    
+</ui:composition>

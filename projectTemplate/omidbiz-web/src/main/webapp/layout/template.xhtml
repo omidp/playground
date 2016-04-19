@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"	
+	xmlns:s="http://jboss.com/products/seam/taglib"	
+	xmlns:c="http://java.sun.com/jstl/core"
+	contentType="text/html">
+	<c:set var="_ctx" value="#{request.contextPath}" />
+	<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><h:outputText value="#{messages['Page_Title']}" /></title>
+<link rel="shortcut icon" href="#{_ctx}/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="#{_ctx}/favicon.ico" type="image/x-icon" />
+<link href="#{theme.css}" rel="stylesheet" />
+
+
+
+<script type="text/javascript">
+		var contextPath = '#{_ctx}';
+		var currentDate = new Date(#{currentDate.time});
+		var sessionTimeout =  #{httpSession.maxInactiveInterval};
+		var pathName = window.location.pathname.substring(contextPath.length+1).replace('.seam', '.xhtml');		
+		jQuery.noConflict();
+		jQuery(document).ready(function(){
+			
+		});
+		//
+		//var socket = atmosphere;
+		//var subSocket;
+		//var request = {
+			//	url : window.location.origin + contextPath
+			//			+ "/omidbizws/#{credentials.username}",
+			//	trackMessageLength : true,
+			//	contentType : "text/plain",
+			//	logLevel : 'debug',
+			//	reconnectInterval : 2000,
+			//	pollingInterval : 2000,
+			//	fallbackTransport : 'long-polling',
+			//	transport : 'websocket'
+			//};
+	</script>
+<ui:insert name="head" />
+
+</head>
+<body>
+	
+	
+	<s:div id="uiMessage">
+	
+		<div class="alert-box">
+			<h:messages id="messages" globalOnly="true" styleClass="message"
+				errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg"
+				rendered="#{showGlobalMessages != 'false'}" />
+		</div>
+	</s:div>
+
+	<div class="ui-layout-north">
+		<ui:include src="/layout/header.xhtml" />
+	</div>
+
+	<div class="ui-layout-west">
+		<ui:include src="/layout/menu.xhtml" />
+	</div>
+
+	<div class="ui-layout-center">
+		<div style="min-height: 95%">
+			<ui:insert name="body"></ui:insert>
+		</div>
+		<ui:include src="/layout/footer.xhtml" />
+	</div>
+
+	
+	
+	<s:fragment rendered="#{init.debug}">
+	
+	</s:fragment>
+	
+</body>
+	</html>
+</f:view>

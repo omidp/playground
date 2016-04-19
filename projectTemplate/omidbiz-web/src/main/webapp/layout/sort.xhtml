@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:s="http://jboss.com/products/seam/taglib">
+    <c:if test="#{entityList.orderColumn == propertyPath}">
+	    <c:choose>
+					<c:when test="#{entityList.orderDirection == 'desc'}">
+						<c:set var="desc" value="sort-inidicator-desc-active"></c:set>
+					</c:when>
+					<c:otherwise>
+						<c:set var="asc" value="sort-inidicator-asc-active"></c:set>
+					</c:otherwise>
+		</c:choose>
+    </c:if>
+    <h:outputText value="#{propertyLabel}" />
+    <s:span styleClass="sort-wrapper">
+	    <s:link  styleClass="sort-indicator-asc #{asc}">
+	    	<f:param name="sort" value="#{propertyPath}"/>
+	        <f:param name="dir" value="asc"/>    	
+	    </s:link>
+	    
+	    <s:link  styleClass="sort-indicator-desc #{desc}">
+	    	<f:param name="sort" value="#{propertyPath}"/>
+	        <f:param name="dir" value="desc"/>
+	    </s:link>
+    </s:span>
+</ui:composition>

@@ -12,6 +12,7 @@
  + [Domain Driven Designs](http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215) by Eric Evans
  + [Code Complete (2nd edition)](http://cc2e.com/) by Steve McConnell
  + [Software Architecture Design Patterns in Java](http://www.amazon.com/Software-Architecture-Design-Patterns-Java/dp/0849321425/ref=sr_1_14) by Partha Kuchana
+ + [http://www.amazon.com/Choose-Yourself-James-Altucher-ebook/dp/B00CO8D3G4](Choose Yourslef) by James Altucher 
  
 # List of books that I'm going to love
 

@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:s="http://jboss.com/products/seam/taglib">
+	<c:set var="_pageCount" value="#{entityList.pageCount == 0 ? 1 : entityList.pageCount}"/>
+	<div class="pagination">
+	    
+    	<s:link  styleClass="page"
+            rendered="#{entityList.previousExists}"
+               value="#{messages.First_Page}"
+                  id="firstPage">
+          <f:param name="firstResult" value="0"/>
+          <f:param name="pageNumber" value="0"/>
+          <ui:insert name="additionalParams"></ui:insert>
+        </s:link>
+
+        <s:link  styleClass="page"
+            rendered="#{entityList.previousExists}"
+               value="#{messages.Previous_Page}"
+                  id="previousPage">
+            <f:param name="firstResult"
+                    value="#{entityList.previousFirstResult}"/>
+            <f:param name="pageNumber" value="#{entityList.pageNumber-1}"/>
+            <ui:insert name="additionalParams"></ui:insert>
+        </s:link>
+        
+	         
+	    <s:span styleClass="page" style="direction:rtl;" rendered="#{entityList.nextExists or entityList.previousExists}">
+	    	<h:outputText  value="#{entityList.pageNumber + 1}"/> #{messages['Of']} <h:outputText value="#{_pageCount}" />  
+	    </s:span>     
+	    
+
+        <s:link  styleClass="page"
+            rendered="#{entityList.nextExists}"
+               value="#{messages.Next_Page}"
+                  id="nextPage">
+            <f:param name="firstResult"
+                    value="#{entityList.nextFirstResult}"/>
+            <f:param name="pageNumber"
+                    value="#{entityList.pageNumber+1}"/>        
+            <ui:insert name="additionalParams"></ui:insert>        
+        </s:link>
+
+        <s:link  styleClass="page"
+            rendered="#{entityList.nextExists}"
+               value="#{messages.Last_Page}"
+                  id="lastPage">
+            <f:param name="firstResult"
+                    value="#{entityList.lastFirstResult}"/>
+            <f:param name="pageNumber"
+                    value="#{entityList.pageCount-1}"/>        
+            <ui:insert name="additionalParams"></ui:insert>        
+        </s:link>
+        
+        </div>
+</ui:composition>

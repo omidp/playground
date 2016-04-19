@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages https-port="8443" login-view-id="/login.xhtml" no-conversation-view-id="/home.xhtml"
+	xmlns="http://jboss.com/products/seam/pages" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd">
+	
+	
+		
+	<exception class="org.jboss.seam.framework.EntityNotFoundException">
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Record_not_found']}</message>
+		</redirect>
+	</exception>
+	<exception class="javax.persistence.EntityNotFoundException">
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Record_not_found']}</message>
+		</redirect>
+	</exception>
+	<exception class="javax.persistence.EntityExistsException">
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Duplicate_Record']}</message>
+		</redirect>
+	</exception>
+	<exception class="javax.persistence.OptimisticLockException">
+		<end-conversation />
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Another_User_Changed_The_Same_Data_Please_Try_Again']}</message>
+		</redirect>
+	</exception>
+	<exception class="org.jboss.seam.security.AuthorizationException">
+		<redirect view-id="/error.xhtml">
+			<message severity="error">#{messages['You_Donot_Have_Permiss_On_To_Access_This_Resource']}</message>
+		</redirect>
+	</exception>
+	<exception class="org.jboss.seam.security.NotLoggedInException">
+		<redirect view-id="/login.xhtml">
+			<message severity="warn">#{messages['org.jboss.seam.NotLoggedIn']}</message>
+		</redirect>
+	</exception>
+	<exception class="javax.faces.application.ViewExpiredException">
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Your_Session_Has_Timed_Out_Please_Try_Again']}</message>
+		</redirect>
+	</exception>
+	<exception class="org.jboss.seam.ConcurrentRequestTimeoutException"
+		log-level="trace">
+		<http-error error-code="503" />
+	</exception>
+	<exception class="java.io.IOException" log-level="trace">
+		<redirect view-id="/error.xhtml">
+			<message severity="warn">#{messages['Set_ArrayList']}</message>
+		</redirect>
+	</exception>
+	<exception class="org.jboss.seam.web.FileUploadException">
+		<redirect view-id="/error.xhtml">
+			<message>#{org.jboss.seam.handledException.message}</message>
+		</redirect>
+	</exception>
+	<exception>
+		<redirect view-id="/error.xhtml">
+			<message severity="error">#{messages['Unexpected_Error_Please_Try_Again']}</message>
+		</redirect>
+	</exception>
+</pages>
