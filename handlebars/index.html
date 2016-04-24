@@ -13,13 +13,16 @@
 			</div>
 		  </div>
 	</script>
-	
+	<div id="container">
+		
+	</div>
 	<script>
 		var source   = jQuery("#entry-template").html();
 		var template = Handlebars.compile(source);
 		var context = {title: "My New Post", body: "This is my first post!"};
 		var html    = template(context);
-		console.log(html);
+		//console.log(html);
+		jQuery("#container").append(html);
 	</script>
 </body>
 </html>
