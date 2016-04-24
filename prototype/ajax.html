@@ -20,6 +20,14 @@
 				   onFailure: function() { alert('Something went wrong...'); }
 			});
 	}
+	Ajax.Responders.register({
+  onCreate: function(){
+    alert('a request has been initialized!');
+  }, 
+  onComplete: function(){
+    alert('a request completed');
+  }
+});
 	</script>
 	<form name="regForm" id="regForm">
 	<input type="text" name="fname" />
