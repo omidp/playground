@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery.js" > </script>
+<script type="text/javascript" src="../jquery-ui.min.js" > </script>
+<script type="text/javascript" src="../prototype.js" > </script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+	<script>
+		function sendAjax()
+		{
+			console.log('sending request');
+			new Ajax.Request('/rest/producList', {
+				  method:'get',
+				  parameters: $("regForm").serialize(true),
+				  requestHeaders: {Accept: 'application/json'},
+				  onSuccess: function(transport){
+					var json = transport.responseText.evalJSON(true);
+				  },
+				   onFailure: function() { alert('Something went wrong...'); }
+			});
+	}
+	</script>
+	<form name="regForm" id="regForm">
+	<input type="text" name="fname" />
+	<input type="text" name="lname" />
+	
+	</form>
+	<input type="button" value="Ajax ! " onclick="sendAjax();"/>
+</body>
+</html>
