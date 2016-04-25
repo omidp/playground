@@ -164,11 +164,6 @@
 	
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-api</artifactId>
@@ -202,6 +197,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
 					<webResources>
 						<resource>

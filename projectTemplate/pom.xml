@@ -19,10 +19,6 @@
 
 	<repositories>
 		<repository>
-			<id>org.openfaces</id>
-			<url>http://repository.openfaces.org/repository</url>
-		</repository>
-		<repository>
 			<id>jfree</id>
 			<url>http://www.ibiblio.org/maven/jfree/</url>
 		</repository>
@@ -543,12 +539,6 @@
 				<version>${facelets.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>javax.persistence</groupId>
-				<artifactId>persistence-api</artifactId>
-				<version>${javax.persistence.version}</version>
-				<scope>provided</scope>
-			</dependency>
 
 			<dependency>
 				<groupId>org.richfaces.framework</groupId>
