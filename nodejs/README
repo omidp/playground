@@ -1,5 +1,16 @@
-NodeJS sample for serving json file. 
+# NodeJS sample for serving json file. 
 
 ```
 http://127.0.0.1:3000/node.json
+```
+
+### How to run
+
+```
+dnf install node npm
+
+npm install
+
+node server.js
+
 ```
