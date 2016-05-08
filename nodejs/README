@@ -1,0 +1,5 @@
+NodeJS sample for serving json file. 
+
+```
+http://127.0.0.1:3000/node.json
+```
