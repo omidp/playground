@@ -6,3 +6,4 @@
  + [Apache](http://apache.org)
  + [dzone](http://dzone.com/)
  + [infoq](http://infoq.com/)
+ + [nodejs](https://visionmedia.github.io/masteringnode/book.html)
