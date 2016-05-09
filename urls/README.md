@@ -6,6 +6,7 @@
  + [Apache](http://apache.org)
  + [dzone](http://dzone.com/)
  + [infoq](http://infoq.com/)
+ + [big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
 
 #NodeJS
  + [nodejs](https://visionmedia.github.io/masteringnode/book.html)
