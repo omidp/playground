@@ -93,7 +93,7 @@ public class JasperReportManager
 
         private int currentItemIndex;
 
-        public JasperWebServiceDatasource(JasperPaginationHandler paginationHandler)
+        public JasperPagingDatasource(JasperPaginationHandler paginationHandler)
         {
             this.paginationHandler = paginationHandler;
             this.totalCount = paginationHandler.getResultCount();
