@@ -15,3 +15,8 @@
  grep -rnw '/home/omidp/richfaces_3.3.1/ui' -e "rich:clientId"
  ```
 
+ * search in huge file and save result to a file
+
+```
+grep -C 20 -i 'insert into `charge_user`'  20150331_1124.sql >> output.txt 
+```
