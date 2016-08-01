@@ -20,3 +20,14 @@
 ```
 grep -C 20 -i 'insert into `charge_user`'  20150331_1124.sql >> output.txt 
 ```
+ * delete .svn directory recursivly* 
+
+```
+find . -name .svn -exec rm -rf {} \;
+
+find . -name .svn -exec ls {} \;
+
+find . -type d -name .svn -exec rm -rf {} \;
+
+```
+ 
