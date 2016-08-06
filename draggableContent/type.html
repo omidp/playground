@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery.js" > </script>
+<script type="text/javascript" src="typed.min.js" > </script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<style>
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+</style>
+</head>
+<body>
+	<script>
+		jQuery(document).ready(function(){
+			
+            jQuery("#typed").typed({
+            stringsElement: jQuery('#typed-strings')
+        });
+		
+			});
+		
+	</script>
+	<div id="typed-strings">
+    <p>Typed.js is a <strong>jQuery</strong> plugin. <br /> salam new line</p>
+    <p>haleeeee</p>
+    
+</div>
+	<span id="typed"></span>
+</body>
+</html>
