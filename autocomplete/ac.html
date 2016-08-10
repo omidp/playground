@@ -1,0 +1,61 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery.js" > </script>
+<script type="text/javascript" src="../jquery-ui.min.js" > </script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+<link href="jquery.ui.autocomplete.css" rel="stylesheet"/>
+<link href="jquery.ui.theme.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  </style>
+</head>
+<body>
+	<script>
+		jQuery(document).ready(function(){
+			
+		
+ 
+    jQuery( "#birds" ).autocomplete({
+      source: "data.json",      
+      minLength: 2,
+      select: function( event, ui ) {
+		  console.log(ui.item);
+        console.log( ui.item ?
+          "Selected: " + ui.item.value + " aka " + ui.item.id :
+          "Nothing selected, input was " + this.value );
+      }
+    });
+    
+  
+		
+			});
+		
+	</script>
+	
+	
+	<div class="ui-widget" style="direction:rtl;">
+  <label for="birds">Birds: </label>
+  <input id="birds">
+</div>
+ 
+<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+  Result:
+  <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+</div>
+ 
+	
+</body>
+</html>
