@@ -9,6 +9,7 @@
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    direction:rtl;
 }
 @keyframes blink{
     0% { opacity:1; }
@@ -32,17 +33,19 @@
 		jQuery(document).ready(function(){
 			
             jQuery("#typed").typed({
-            stringsElement: jQuery('#typed-strings')
+            stringsElement: jQuery('#typed-strings'), contentType:'html'
         });
 		
 			});
 		
 	</script>
-	<div id="typed-strings">
-    <p>Typed.js is a <strong>jQuery</strong> plugin. <br /> salam new line</p>
+	<div id="typed-strings" style="direction:rtl;">
+    <p style="direction:ltr;">
+تایپ سریع js فارسی
+</p>
     <p>haleeeee</p>
     
 </div>
-	<span id="typed"></span>
+	<div id="typed" style="direction:rtl;"></div>
 </body>
 </html>
