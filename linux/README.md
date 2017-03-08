@@ -35,4 +35,6 @@ find . -type d -name .svn -exec rm -rf {} \;
 
 ```
 lsof -i :8080
+fuser 1723/tcp
+netstat -nlp
 ```
