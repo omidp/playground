@@ -31,3 +31,8 @@ find . -type d -name .svn -exec rm -rf {} \;
 
 ```
  
+* Which application is using port 8080
+
+```
+lsof -i :8080
+```
