@@ -13,3 +13,9 @@ ffmpeg -i capture.mkv -vf scale=800:-1 output_800.mkv
 ffmpeg -i output_800.mkv -codec:v libtheora -qscale:v 10 -codec:a libvorbis -qscale:a 7 output.ogv
 
 ```
+
+* ffmpeg video duration
+
+```
+ffmpeg -i file.mp4 2>&1 | grep Duration | awk '{print $2}' | tr -d ,
+```
