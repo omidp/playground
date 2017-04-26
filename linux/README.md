@@ -38,3 +38,8 @@ lsof -i :8080
 fuser 1723/tcp
 netstat -nlp
 ```
+* count files in a directory
+
+```
+find accessFiles -type f | wc -l
+```
