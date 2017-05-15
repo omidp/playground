@@ -76,31 +76,224 @@ body .wrapped {
 #alias {
     position: relative;
 }
+body .actionable {
+    position: relative
+}
+#owner h2 {
+    padding-left: 0
+}
+#owner .profile-picture img {
+    margin: 0 .25em;
+    vertical-align: bottom
+}
+.profile-picture img {
+    border-radius: 50px;
+    vertical-align: middle
+}
+#owner .profile-picture img {
+    margin: 0 .25em;
+    vertical-align: bottom
+}
+#page #pageAction {
+    right: 1em;
+}
+#pageAction {
+    position: absolute;
+    right: 0.5em;
+    top: 1.25em;
+}
+#pagePicture {
+    float: left;
+    margin: 0.5em 0;
+    padding: 0 15px;
+}
+
+#pageDescription {
+    float: left;
+    margin-top: -0.5em;
+    width: 60%;
+}
+.markdown {
+    position: relative;
+}
+
+#pageTags {
+    clear: left;
+    margin: 1em 0 0;
+    padding: 0 15px;
+}
+
+#pageTags li {
+    display: inline-block;
+    margin: 0 0 0.5em;
+}
+#pageTags a {
+    background: white none repeat scroll 0 0;
+    border: 1px solid #a2a7aa;
+    border-radius: 4px;
+    color: #535454;
+    display: block;
+    padding: 0 10px;
+}
+@media screen and (max-width: 799px) and (min-device-width: 769px),
+screen and (max-width: 767px) and (max-device-width: 768px) {
+	
+	body {
+        min-width: 400px;
+        font-size: 17px
+    }
+    
+   
+    #content-wrapper {
+        padding-top: 54px
+    }
+	#page.banner #info {
+        width: 380px;
+        padding-left: 0;
+        padding-right: 0
+    }
+    #page.banner #info,
+    #page #info {
+        padding-bottom: 3.5em
+    }
+    #info-wrapper {
+        margin-bottom: 1em
+    }
+    #pageAction {
+        top: auto;
+        bottom: 1em
+    }
+    #page.banner #pageAction {
+        right: .75em
+    }
+    #alias,
+    #owner {
+        font-size: .7em
+    }
+    #pageTitle>#alias {
+        display: block
+    }
+    #pageTitle>#owner {
+        display: block;
+        float: left
+    }
+    #owner h2 {
+        padding: 10px 15px
+    }
+    #owner h2 img {
+        width: 20px;
+        height: 20px
+    }
+    #competingPages {
+        position: absolute;
+        right: 1em;
+        bottom: .5em
+    }
+    #pageDescription {
+        width: auto
+    }
+    #info:not(.no-picture) #pageTitle>#alias {
+        margin-left: 45px
+    }
+    #info:not(.no-picture) #pagePicture {
+        margin-top: -85px;
+        padding-right: 0
+    }
+    #info:not(.no-picture) #pagePicture img {
+        width: 30px;
+        height: 30px
+    }
+    #actions-top {
+        float: left;
+        margin-top: -91px;
+        margin-left: .25em
+    }
+    #page.banner #actions-top {
+        margin-left: 1em
+    }
+    
+
+#pageDescription {
+    float: left;
+    margin-top: -0.5em;
+    width: 90%;
+}
+.markdown p {
+    clear: left;
+    overflow: hidden;
+	}
+}
 </style>
 </head>
 <body>
-<div id="body-wrapper">
+
 <div id="content-wrapper">
 	<div id="page" class="non-editable banner">
 		
 		<div id="info-wrapper">
 			<div id="banner" style=" background-image: url('https://zeef.io/image/61836/1800/x?1494778965209');"></div>
+			
+			
 			<div id="info" class="wrapped ui-helper-clearfix">
-				<div id="pageTitle" class="ui-helper-clearfix">
-					<div id="alias" class="actionable">
-						<h1>
-							<span class="text">Business</span>
-						</h1>
-					</div>
-					
+	
+			<div id="pageTitle" class="">
+				<div id="alias" class="actionable">
+					<h1>
+						<span class="text">Business</span>
+					</h1>
+				</div>
+
+				<div id="owner">
+					<h2>
+						<span class="by">by</span>
+						<span id="profilePictureAvatar" class="profile-picture ">
+							<img id='profilePictureAvatar_photo' src='https://zeef.io/resources/zeef/images/blank.png.xhtml?ln=zeef' 
+							data-defer-src='https://zeef.io/image/51814/30/s?1493892929941' 
+							width='30' height='30' alt=''  />
+						</span>
+						<a class="profile" href="https://zeef.com/profile/pauljohn"><span class="text">Paul John</span></a>
+					</h2>
 				</div>
 			</div>
+			<div id="pageAction">
+<form id="followPageForm" name="followPageForm" method="post" action="/pauljohn" class="updateOnFollow" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="followPageForm" value="followPageForm" />
+
+				<input type="hidden" name="enableRestorableView" value="true" /><button id="followPageForm:followPage" name="followPageForm:followPage" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left follow important" onclick="PrimeFaces.ab({s:'followPageForm:followPage',p:'followPageForm:followPage',u:'@(.updateOnFollow)',onco:function(xhr,status,args){gaPage('FollowPage');}});return false;" title="Start following this page and get notified." type="submit"><span class="ui-button-icon-left ui-icon ui-c icon ion-ios-star"></span><span class="ui-button-text ui-c">Follow</span></button><script id="followPageForm:followPage_s" type="text/javascript">PrimeFaces.cw("CommandButton","widget_followPageForm_followPage",{id:"followPageForm:followPage",widgetVar:"widget_followPageForm_followPage"});</script><input type="hidden" name="javax.faces.ViewState" value="-3313236343683904940:8220798368774261066" autocomplete="off" />
+</form></div>
+				
+			<div id="pagePicture">
+				<img id='pagePictureImage' src='https://zeef.io/resources/zeef/images/blank.png.xhtml?ln=zeef' data-defer-src='https://zeef.io/image/61821/100/s?1494778965209' width='100' height='100' alt=''  />
+				</div>
+
+			<div id="pageDescription">
+
+	<div class="markdown">
+		<div class="content "><p>
+ Web resources, tools and instruments for business, investments and earn money in internet and media. </p>
+		</div>
+	</div>
+					<ul id="pageTags">
+							<li><a href="/?query=tag%3Ainvesting" title="Find pages with tag 'investing'.">investing</a></li>
+							<li><a href="/?query=tag%3Ainvestments" title="Find pages with tag 'investments'.">investments</a></li>
+							<li><a href="/?query=tag%3Abusiness" title="Find pages with tag 'business'.">business</a></li>
+							<li><a href="/?query=tag%3Ainternetmarketing" title="Find pages with tag 'internetmarketing'.">internetmarketing</a></li>
+							<li><a href="/?query=tag%3Ainternet" title="Find pages with tag 'internet'.">internet</a></li>
+					</ul>
+			</div>
+		
+		
+		
+		</div>
+		
+		
+		
 		</div>
 
 
 	</div>
 </div>
-</div>
+
 
 
 </body>
