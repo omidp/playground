@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery.js" > </script>
+<script type="text/javascript" src="handlebars.runtime-v4.0.5.js" > </script>
+<script type="text/javascript" src="js/templates/templates.js" > </script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+	
+	<div id="container">
+		
+	</div>
+	<script>
+		var template = Handlebars.templates['booksList'];
+		var context = {books: [{title: "book1"}, {title: "book2"}]};
+		var html    = template(context);
+		//console.log(html);
+		jQuery("#container").append(html);
+	</script>
+</body>
+</html>
