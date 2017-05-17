@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../semantic.css">
+<link rel="stylesheet" href="../w3.css">
+<script src="../jquery.js"></script>
+<script src="../semantic.js"></script>
+<script src="../handlebars/handlebars.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<button onclick="addBlock();">Add block</button>
+<div class="ui two cards" id="page_blocks">
+  
+  <div class="card">
+    <div class="content">
+      content 1
+    </div>
+    <div class="extra">
+		link goes here
+    </div>
+  </div>
+  
+    
+</div>
+<script id="block-template" type="text/x-handlebars-template">
+		  <div class="card">
+			<div class="content">
+			  {{title}}
+			</div>
+			<div class="extra">
+			
+			</div>
+		</div>
+</script>
+<script>
+	function addBlock()
+	{
+		var source   = jQuery("#block-template").html();
+		var template = Handlebars.compile(source);
+		var context = {title: "Java"};
+		var html    = template(context);
+		//console.log(html);
+		jQuery("#page_blocks").append(html);
+	}
+</script>
+
+
+</body>
+</body>
+</html>
