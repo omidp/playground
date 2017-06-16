@@ -43,3 +43,9 @@ netstat -nlp
 ```
 find accessFiles -type f | wc -l
 ```
+
+* move files recursively
+
+```
+find . -name '*.orig' -exec mv "{}" /home/omidp/temp/merge/ \;
+```
