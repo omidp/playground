@@ -17,6 +17,18 @@
     
     
     <script type="text/javascript">
+		
+		var chk = function (rowKey, dataRow) {
+			console.log(rowKey);
+			console.log(dataRow);
+    var level = dataRow.level;
+    if (level == 0) {
+        return true;
+    }
+    return false;
+}
+		
+		
         $(document).ready(function () {          
             var employees = [
     {
@@ -68,6 +80,7 @@ var source =
                 width: 850,
                 source: dataAdapter,
                 pageable: false,
+                hierarchicalCheckboxes:true,
                 checkboxes: true,
                 columnsResize: true,
                 ready: function()
@@ -96,6 +109,11 @@ var source =
 <body class="default">
  <div id="treeGrid">
     </div>
+    
+   <button onclick="checkedChks();">read checked</button> 
+    <script>
+		
+    </script>
 </body>
 </body>
 </html>
