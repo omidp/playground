@@ -19,3 +19,15 @@ ffmpeg -i output_800.mkv -codec:v libtheora -qscale:v 10 -codec:a libvorbis -qsc
 ```
 ffmpeg -i file.mp4 2>&1 | grep Duration | awk '{print $2}' | tr -d ,
 ```
+
+Linux
+
+```
+java -cp client-1.0-SNAPSHOT.jar:lib/* TestClient.App
+```
+
+Windows
+
+```
+java -cp client-1.0-SNAPSHOT.jar;lib/* TestClient.App
+```
