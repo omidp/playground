@@ -49,3 +49,9 @@ find accessFiles -type f | wc -l
 ```
 find . -name '*.orig' -exec mv "{}" /home/omidp/temp/merge/ \;
 ```
+
+* remote desktop share linux folder with windows
+
+```
+rdesktop -r disk:linux=/home/omidp/windows IP
+```
