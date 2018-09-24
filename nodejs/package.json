@@ -1,9 +1,0 @@
-{
-"name": "jsonfsserver",
-"version": "0.0.1",
-"description": "a server for serving json files",
-"dependencies": {
-"socket.io": "0.9.6",
-"mime": "1.2.7"
-}
-}
