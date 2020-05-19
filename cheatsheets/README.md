@@ -1,17 +1,38 @@
-+ mvn install:install-file -Dfile=/root/barbecue-1.1.jar -DgroupId=net.sourceforge -DartifactId=barbecue -Dversion=1.1 -Dpackaging=jar
-+ pg_ctl -D /var/lib/pgsql/data/ -l logfile start
-
-
-* ffmpeg from screen record to scaling video ogg
++ mvn localnstall 
 
 ```
+mvn install:install-file -Dfile=/root/barbecue-1.1.jar -DgroupId=net.sourceforge -DartifactId=barbecue -Dversion=1.1 -Dpackaging=jar
+```
 
-ffmpeg -video_size 1368x768 -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset slow capture.mkv
++ start postgres 
 
-ffmpeg -i capture.mkv -vf scale=800:-1 output_800.mkv
+```
+pg_ctl -D /var/lib/pgsql/data/ -l logfile start
+```
 
-ffmpeg -i output_800.mkv -codec:v libtheora -qscale:v 10 -codec:a libvorbis -qscale:a 7 output.ogv
+* ffmpeg record desktop
 
+```
+ffmpeg -video_size 1600x900 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -i default capture.mkv
+```
+
+
+* ffmpeg convert mkv to mp4
+
+```
+#!/bin/bash
+VIDEOS=/opt/video/springwebflow/
+find "$VIDEOS" -name '*.mkv' -exec sh -c 'ffmpeg -y -i "$0" -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -c:a aac -b:a 128k "${0%%.mkv}.mp4"' {} \;
+exit;
+```
+
+* ffmpeg convert mp4 to webm
+
+```
+#!/bin/bash
+VIDEOS=/opt/video/springwebflow/
+find "$VIDEOS" -name '*.mp4' -exec sh -c 'ffmpeg -i "$0" -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis "${0%%.mp4}.webm"' {} \;
+exit;
 ```
 
 * ffmpeg video duration
