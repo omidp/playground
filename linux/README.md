@@ -7,6 +7,14 @@
 	egrep -lRZ 'omidbiz' . | xargs -0 -l sed -i -e 's/omidbiz/omid/g' 
  ```
  
+ * replace all text recursively specify file
+ 
+ ```
+	#replace omid with omidbiz
+	egrep -lRZ 'omidbiz' --include pom.xml . | xargs -0 -l sed -i -e 's/omidbiz/omid/g' 
+ ```
+ 
+ 
  * yes | cp -rf /opt/build_scripts/standalone.xml /opt/jboss-eap-6.2/standalone/configuration/standalone.xml
  
  * Finding all files containing a text string on Linux
