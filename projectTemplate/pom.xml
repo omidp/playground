@@ -354,7 +354,7 @@
 			<dependency>
 				<groupId>net.sf.mpxj</groupId>
 				<artifactId>mpxj</artifactId>
-				<version>5.1.16</version>
+				<version>8.3.5</version>
 				<exclusions>
 					<exclusion>
 						<artifactId>jgoodies-binding</artifactId>
