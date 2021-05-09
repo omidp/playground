@@ -63,3 +63,7 @@ find . -name '*.orig' -exec mv "{}" /home/omidp/temp/merge/ \;
 ```
 rdesktop -r disk:linux=/home/omidp/windows IP
 ```
+
+```
+xfreerdp +clipboard /u:admin /v:46.ip +toggle-fullscreen /w:1024 /h:768 /drive:shared,/home/omidp/temp
+```
