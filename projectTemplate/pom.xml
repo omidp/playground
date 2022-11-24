@@ -50,7 +50,7 @@
 		<!-- Persistence -->
 		<javax.persistence.version>1.0</javax.persistence.version>
 		<!-- Hibernate -->
-		<hibernate.version>3.6.10.Final</hibernate.version>
+		<hibernate.version>5.3.20.Final</hibernate.version>
 		<hibernate.envers.version>3.6.0.Final</hibernate.envers.version>
 		<hibernate-em.version>3.6.10.Final</hibernate-em.version>
 		<version.drools>5.0.1</version.drools>
