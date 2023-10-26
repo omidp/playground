@@ -56,7 +56,7 @@
 		<version.drools>5.0.1</version.drools>
 		<seam.version>2.2.3</seam.version>
 		<postgres.version>9.1-901.jdbc4</postgres.version>
-		<version.resteasy>2.3.3.Final</version.resteasy>
+		<version.resteasy>3.0.20.Final</version.resteasy>
 	</properties>
 
 	<dependencyManagement>
